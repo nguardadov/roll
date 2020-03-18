@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         //aca buscamos los botones
         val rollButton: Button = findViewById(R.id.roll_button)
-       // val countUpB: Button = findViewById(R.id.count_up)
+        val clearButton: Button = findViewById(R.id.roll_clear)
 
         //aca por medio de su id buscamos los elementos de las imagenes
         diceImage = findViewById(R.id.dice_image)
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         //le agregamos accion al boton
         rollButton.setOnClickListener{rollDice()}
-       // countUpB.setOnClickListener{countUp()}
+        clearButton.setOnClickListener{roll_clear()}
     }
 
     private fun rollDice(){
@@ -77,27 +77,11 @@ class MainActivity : AppCompatActivity() {
 
     //count up
 
-   /* private fun countUp()
+   private fun roll_clear()
     {
-       // val resultText: TextView = findViewById(R.id.result_text)
-       // val data = resultText.text.toString();
-         var res = 0
-        if(resultText.text == "Hello World!")
-        {
-            res = 1;
-        }else{
-            res = resultText.text.toString().toInt()
-            if(res in 1..5)
-            {
-                res++
-            }else{
-                res = 1;
-            }
-        }
-
-        resultText.text = res.toString()
-
-    }*/
+        diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage2.setImageResource(R.drawable.empty_dice)
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
